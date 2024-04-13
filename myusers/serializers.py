@@ -10,7 +10,7 @@ class RegisterUserSerializer(serializers.ModelSerializer):
          'id',
          'first_name',
          'last_name',
-         #'degree_program',
+         'degree_program',
          'email',
          'phone_number',
          'password',
@@ -27,7 +27,7 @@ class RegisterUserSerializer(serializers.ModelSerializer):
 
 class UserCreaterSerializer(UserCreateSerializer):
    class Meta(UserCreateSerializer.Meta):  
-       fields = ['id','first_name', 'last_name', 'phone_number','email','password']
+       fields = ['id','first_name', 'last_name', 'phone_number','email','password','degree_program']
 
 class CurrentUserSerializer(UserSerializer):
    class Meta(UserSerializer.Meta):
