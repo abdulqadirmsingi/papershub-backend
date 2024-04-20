@@ -16,7 +16,7 @@ class CourseViewset(ModelViewSet):
     def get_queryset(self):
         user = self.request.user
         profile = User.objects.filter(id = user.id).first()
-        return Course.objects.filter(degree_id_id = profile.degree_program, year_taught = profile.year)
+        return Course.objects.filter(degree_id = profile.degree_program, year_taught = profile.year)
     serializer_class = CourseSerializer
 
 
