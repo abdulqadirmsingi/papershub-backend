@@ -22,10 +22,11 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('papers/', include('learning_system.urls')),
-    path('myusers/', include('myusers.urls')),
-    path('api-auth/', include('rest_framework.urls')),
+    path('api/', include('myusers.urls')),
     path('auth/',include('djoser.urls')),
-    path('auth/', include('djoser.urls.jwt')),
+    # path('api-auth/', include('rest_framework.urls')),
+    
+    # path('auth/', include('djoser.urls.jwt')),
 ]
 
 

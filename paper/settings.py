@@ -93,8 +93,12 @@ WSGI_APPLICATION = 'paper.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'papershub',
+        'USER': 'abdulqadir',
+        'PASSWORD': 'kariakoo@1',
+        'HOST': 'localhost', 
+        'PORT': '5432',
     }
 }
 
@@ -161,8 +165,8 @@ SIMPLE_JWT = {
     #'AUTH_HEADER_TYPES': ('JWT',),
     #'ACCESS_TOKEN_LIFETIME': timedelta(hours=1),
     #'REFRESH_TOKEN_LIFETIME': timedelta(hours=2),
-    'ROTATE_REFRESH_TOKENS': True,
-    'UPDATE_LAST_LOGIN': False,
+    # 'ROTATE_REFRESH_TOKENS': True,
+    # 'UPDATE_LAST_LOGIN': False,
     "AUTH_COOKIE": "access_token",  # cookie name
     "AUTH_COOKIE_DOMAIN": None,  # specifies domain for which the cookie will be sent
     "AUTH_COOKIE_SECURE": True,  # restricts the transmission of the cookie to only occur over secure (HTTPS) connections. 

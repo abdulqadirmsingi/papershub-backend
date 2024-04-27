@@ -1,23 +1,20 @@
 from rest_framework import serializers
 from .models import *
 
+
+
 class DegreeProgramSerializer(serializers.ModelSerializer):
     class Meta:
         model = DegreeProgram
         fields = '__all__'
 
 
+
 class CourseSerializer(serializers.ModelSerializer):
-    
     class Meta:
         model = Course
-        fields = ['id', 'name', 'description', 'degree_id', 'year_taught']
+        fields = ['id', 'name', 'description', 'degree_id', 'year_taught', 'semester', 'notes']
         
-
-class LectureSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Lecture
-        fields = ['id', 'title', 'course_id', 'file']
 
 
 class TutorialSerializer(serializers.ModelSerializer):

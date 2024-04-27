@@ -1,10 +1,8 @@
 from django.conf import settings
-from rest_framework import status
-from djoser.views import UserViewSet
-from rest_framework.views import APIView
 from rest_framework.request import Request
-from rest_framework.status import HTTP_200_OK, HTTP_401_UNAUTHORIZED
 from rest_framework.response import Response
+from rest_framework_simplejwt.tokens import AccessToken
+from rest_framework.status import HTTP_200_OK, HTTP_401_UNAUTHORIZED
 from rest_framework_simplejwt.views import TokenObtainPairView
 
 
@@ -29,11 +27,12 @@ class CustomTokenObtainPairView(TokenObtainPairView):
         return Response({
             **serializer.validated_data,
             **{
-                "first_name": user.first_name,
+                "email": user.email,
                 "program": str(user.degree_program),
                 "year": user.year,
                 }
             },
             status=HTTP_200_OK
             )
+
 
