@@ -13,8 +13,9 @@ class DegreeProgramSerializer(serializers.ModelSerializer):
 class CourseSerializer(serializers.ModelSerializer):
     class Meta:
         model = Course
-        fields = ['id', 'name', 'description', 'degree_id', 'year_taught', 'semester', 'notes']
-        
+        fields = ['id', 'name',"degree", 'description', 'notes', "year", "semester"]
+
+
 
 
 class TutorialSerializer(serializers.ModelSerializer):
@@ -26,4 +27,4 @@ class TutorialSerializer(serializers.ModelSerializer):
 class PastPaperSerializer(serializers.ModelSerializer):
     class Meta:
         model = PastPaper
-        fields = ['id', 'title', 'course_id', 'file', 'solution']
+        fields = ['id', 'title', 'course', 'file', 'solution']

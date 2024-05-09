@@ -32,8 +32,8 @@ ALLOWED_HOSTS = ["*"]
 CORS_ALLOWED_ORIGINS_ALLOW = True
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOWED_ORIGINS = [
-    'http://127.0.0.1:5501',
-    'http://localhost:5501'
+    'http://127.0.0.1:5502',
+    'http://localhost:5502'
 ]
 
 
@@ -191,7 +191,7 @@ DJOSER = {
     'ACTIVATION_URL' : 'activate.html?uid={uid}&token={token}',
     "SEND_ACTIVATION_EMAIL": True,
     'SEND_CONFIRMATION_EMAIL': True,
-    "PASSWORD_RESET_CONFIRM_URL": "password-reset/{uid}/{token}",
+    "PASSWORD_RESET_CONFIRM_URL": "reset-password.html?uid={uid}&token={token}",
     'PASSWORD_RESET_CONFIRM_RETYPE': True,
     'PASSWORD_RESET_SHOW_EMAIL_NOT_FOUND': True,
     'PASSWORD_CHANGED_EMAIL_CONFIRMATION':True,
@@ -202,5 +202,5 @@ DJOSER = {
     }
 }
 
-DOMAIN = 'localhost:5501'
+DOMAIN = 'localhost:5502'
 SITE_NAME = "Papershub.com"
