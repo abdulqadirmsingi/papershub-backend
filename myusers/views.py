@@ -1,10 +1,10 @@
 from django.conf import settings
 from rest_framework.request import Request
 from rest_framework.response import Response
-from rest_framework_simplejwt.tokens import AccessToken
-from rest_framework.status import HTTP_200_OK, HTTP_401_UNAUTHORIZED
+from rest_framework import status
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.viewsets import ModelViewSet
 from rest_framework_simplejwt.views import TokenObtainPairView
-
 
 class CustomTokenObtainPairView(TokenObtainPairView):
     def post(self, request: Request, *args, **kwargs) -> Response:
@@ -32,7 +32,9 @@ class CustomTokenObtainPairView(TokenObtainPairView):
                 "year": user.year,
                 }
             },
-            status=HTTP_200_OK
+            status=status.HTTP_200_OK
             )
 
+  
 
+ 

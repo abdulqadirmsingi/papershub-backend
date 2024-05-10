@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 from learning_system.models import DegreeProgram
 from .usermanage import MyUserManager
+from uuid import uuid4
 # Create your models here.
 
 class User(AbstractUser):
@@ -15,6 +16,7 @@ class User(AbstractUser):
     password = models.CharField(max_length = 255)
     degree_program = models.ForeignKey(DegreeProgram, on_delete=models.CASCADE, blank=True, null=True)
     year = models.IntegerField(choices=choices)
+    subscribed = models.BooleanField(default=False)
     
 
     USERNAME_FIELD = 'email'
@@ -23,3 +25,4 @@ class User(AbstractUser):
     
     def __str__(self):
         return self.email
+
